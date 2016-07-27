@@ -1,0 +1,31 @@
+For black background
+	Download bootstrap.min.css and bootstrap.css
+	from http://bootswatch.com/2/cyborg/
+	copy them into signalk-server-node\bower_components\bootstrap\dist\css
+	
+For center Homepage
+edit/change file : signalk-server-node\lib\interfaces\bowerindex.html
+from
+"	
+  </head>
+  <body>
+    <h1>Signal K Server</h1>
+
+
+    <div/>
+"	
+	
+to
+"
+  </head>
+  <body>
+    <h1 align="center">Signal K Server</h1>
+
+    <div/ align="center">
+"
+
+For installing changes on simplegauge
+cd signalk-server-node\bower_components\simplegauges
+(npm install)
+npm run watch
+it is good when there is yellow text (not red)
