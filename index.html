@@ -86,7 +86,8 @@
 		skClient = new SignalK.Client(parts[0],parts[1]);		
 	  }
       var self = skClient.getSelf(hostname).then(function(selfData) {
-        selfId = selfData.body.uuid || selfData.body.mmsi;
+        selfId = selfData.body.uuid;
+		if (!selfData.body.uuid) selfId = 'urn:mrn:imo:mmsi:'+selfData.body.mmsi
         gaugeSet.setSelfId(selfId);
         connection = skClient.connectDelta(hostname, dispatch);
         $('#address').val(hostname);
